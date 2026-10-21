@@ -1,6 +1,6 @@
-import { SecondNav } from "../../components/SecondNav"
+import { SecondNav } from "@/components/SecondNav"
 
-export default function DomainsLayout({
+export default function PagesLayout({
  children,
 }: {
     children: React.ReactNode
