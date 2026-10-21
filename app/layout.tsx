@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,18 +22,38 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased `}
     >
-      <body className="min-h-full flex flex-col mx-auto text-center">
-      <nav className="flex flex-row mx-auto justify-center mt-5 text-5xl font-bold px-3 gap-3 ">
-        <p>root nav:</p>
+      <body className="min-h-full flex flex-col  mx-auto text-center mt-0">
+        <div className="looped-baner flex flex-row gap-5 text-zinc-300 h-7  ">
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+        </div>
+        
+        <nav className="top-0 flex flex-row w-full mt-0 h-[40px] mx-auto justify-between  text-5xl font-bold px-3 gap-3 bg-zinc-800">
+          <p className="text-3xl">Next<span className="text-blue-700 font-extrabold text-3xl">PRO</span></p>
+          {/* <p>root nav:</p> */}
 
-        <a className="hover:bg-gray-800" href="/">Home</a>
-        <a className="hover:bg-gray-800" href="/about">About</a>
-        <a className="hover:bg-gray-800" href="/about/contact">Contact</a>
-      </nav>
+          <div className="nav-links flex flex-row justify-center p-1 gap-5  text-2xl ">
+            <a className="hover:bg-gray-800" href="/">Home</a>
+            <a className="hover:bg-gray-800" href="/about">About</a>
+            <a className="hover:bg-gray-800" href="/about/contact">Contact</a>
+          </div>
 
-        <h1 className="text-4xl mt-5 font-extrabold" >Hello from the root layout!</h1>
+          <div className="flex gap-5 text-2xl p-1">
+            <Link href='/'>
+              Login
+            </Link>
+            <Link href='/'>
+              Sign In
+            </Link>
+          </div>
+        </nav>
+
         {children}
       </body>
     </html>
