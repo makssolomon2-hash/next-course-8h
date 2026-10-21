@@ -1,4 +1,4 @@
-import { SecondNav } from "../components/SecondNav"
+import { SecondNav } from "../../components/SecondNav"
 
 export default function DomainsLayout({
  children,

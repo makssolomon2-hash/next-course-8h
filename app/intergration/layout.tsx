@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SecondNav } from "../components/SecondNav"
+import { SecondNav } from "../../components/SecondNav"
 
 export default function Intergration({
  children,

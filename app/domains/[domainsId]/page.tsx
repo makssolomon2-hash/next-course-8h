@@ -8,7 +8,7 @@ export default async function DomainsId({params}:DomainsIdProps){
     <div>
       <h1>Heloo from dynamic route</h1>
 
-      <p>{domainsId}</p>
+      <p>Page ID:{domainsId}</p>
     </div>
   )
 }
