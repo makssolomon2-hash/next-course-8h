@@ -25,23 +25,40 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased `}
     >
       <body className="min-h-full flex flex-col  mx-auto text-center mt-0">
-        <div className="looped-baner flex flex-row gap-5 text-zinc-300 h-7  ">
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
-          <h1 className="text-xl mt-0 font-bold " >Hello from the root layout!</h1>
+        <div className="banner-container">
+          <div className="banner-track text-zinc-300">
+            <div className="banner-group">
+              {Array.from({ length: 6 }, (_, index) => (
+                <h1 className="m-0 text-xl font-bold " key={index}>
+                  Hello from the root layout!
+                </h1>
+              ))}
+            </div>
+            {<div className="banner-group" aria-hidden="true">
+              {Array.from({ length: 6 }, (_, index) => (
+                <h1 className="m-0 text-xl font-bold " key={index}>
+                  Hello from the root layout!
+                </h1>
+              ))}
+            </div>}
+          </div>
         </div>
+        
         
         <nav className="top-0 flex flex-row w-full mt-0 h-[40px] mx-auto justify-between  text-5xl font-bold px-3 gap-3 bg-zinc-800">
           <p className="text-3xl">Next<span className="text-blue-700 font-extrabold text-3xl">PRO</span></p>
           {/* <p>root nav:</p> */}
 
           <div className="nav-links flex flex-row justify-center p-1 gap-5  text-2xl ">
-            <a className="hover:bg-gray-800" href="/">Home</a>
-            <a className="hover:bg-gray-800" href="/about">About</a>
-            <a className="hover:bg-gray-800" href="/about/contact">Contact</a>
+            <Link className="hover:bg-gray-800" href="/">Home</Link>
+            <Link href="/intergration">Intergration</Link>
+            <Link href="/activity">Activity</Link>
+            <Link href="/domains">Domains</Link>
+            <Link href="/usage">Usage</Link>   
+            <Link className="hover:bg-gray-800" href="/about/contact">Contact</Link>
+            <Link className="hover:bg-gray-800" href="/about">About</Link>
+            <Link href="/settings">Settings</Link>
+          
           </div>
 
           <div className="flex gap-5 text-2xl p-1">
