@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col mx-auto text-center mt-0">
         <div className="banner-container">
-          <div className="banner-track text-zinc-300">
+          <div className="banner-track text-zinc-900 bg-white">
             <div className="banner-group">
               {Array.from({ length: 10 }, (_, index) => (
                 <h1 className="m-0 text-xl font-bold " key={index}>
