@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col mx-auto text-center">
       <nav className="flex flex-row mx-auto justify-center mt-5 text-5xl font-bold px-3 gap-3 ">
-        <p>root nav:</p>
+        <p>root nav: </p>
 
         <a className="hover:bg-gray-800" href="/">Home</a>
         <a className="hover:bg-gray-800" href="/about">About</a>
