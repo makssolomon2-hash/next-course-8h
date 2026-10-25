@@ -1,5 +1,16 @@
 import Link from "next/link";
 
+const navLinks = [
+  {name: "Home", href: "/" },
+  {name: "Intergration", href: "/intergration" },
+  {name: "Activity", href: "/activity" },
+  {name: "Domains", href: "/domains" },
+  {name: "Usage", href: "/usage" },
+  {name: "Contact", href: "/about/contact" },
+  {name: "About", href:"/about" },
+  {name: "Settings", href: "/settings" },
+];
+
 
 export function NavBar() {
  return(
@@ -9,20 +20,17 @@ export function NavBar() {
             <p className="text-3xl">Next<span className="text-blue-700 font-extrabold text-3xl">PRO</span></p>
           </Link>
           
-          {/* <p>root nav:</p> */}
-
-          <div className="nav-links flex flex-row justify-center p-0 gap-0  text-2xl ">
-            <Link className="hover:bg-zinc-700 px-3 rounded-xl py-2" href="/">Home</Link>
-            <Link href="/intergration" className="hover:bg-zinc-700 px-3 py-2 rounded-xl">Intergration</Link>
-            <Link href="/activity" className="hover:bg-zinc-700 px-3 py-2 rounded-xl">Activity</Link>
-            <Link href="/domains" className="hover:bg-zinc-700 px-3 py-2 rounded-xl">Domains</Link>
-            <Link href="/usage" className="hover:bg-zinc-700 px-3 py-2 rounded-xl">Usage</Link>   
-            <Link className="hover:bg-zinc-700 px-3 py-2 rounded-xl" href="/about/contact">Contact</Link>
-            <Link className="hover:bg-zinc-700 px-3 py-2 rounded-xl" href="/about">About</Link>
-            <Link href="/settings" className="hover:bg-zinc-700 px-3 py-2 rounded-xl">Settings</Link>
-          
-          </div>
-
+          {/* mapping */}
+          <ul className="nav-links flex flex-row justify-center p-0 gap-0  text-2xl">
+            {navLinks.map((link) =>(
+              <li key={link.name}>
+                <Link href={link.href} className="hover:bg-zinc-700 px-3 rounded-xl py-2">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+       
           <div className="flex gap-5 text-2xl p-1">
             <Link href='/' className="hover:bg-zinc-700 px-3 py-2 rounded-xl">
               Sign In
@@ -33,5 +41,7 @@ export function NavBar() {
           </div>
     </div>      
   </nav>
+
+  
  )
 }
