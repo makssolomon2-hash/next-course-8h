@@ -1,5 +1,5 @@
 export default function Domains() {
   return (
-    <div className="text-4xl font-bold mt-5">Hello from Domains!</div>
+    <div className="w-full h-screen flex flex-col justify-center text-3xl font-bold mt-5">Hello from Domains!</div>
   );
 }
