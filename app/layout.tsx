@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { NavBar } from "@/components/NavBar";
-import { SecondNav } from "@/components/SecondNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,16 +24,26 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased `}
     >
-      <body className="min-h-full flex flex-col mx-auto text-center">
-      <nav className="flex flex-row mx-auto justify-center mt-5 text-5xl font-bold px-3 gap-3 ">
-        <p>root nav:</p>
-
-        <a className="hover:bg-gray-800" href="/">Home</a>
-        <a className="hover:bg-gray-800" href="/about">About</a>
-        <a className="hover:bg-gray-800" href="/about/contact">Contact</a>
-      </nav>
-
-        <h1 className="text-4xl mt-5 font-extrabold" >Hello from the root layout!</h1>
+      <body className="min-h-full flex flex-col mx-auto text-center mt-0">
+        <div className="banner-container">
+          <div className="banner-track text-zinc-300">
+            <div className="banner-group">
+              {Array.from({ length: 10 }, (_, index) => (
+                <h1 className="m-0 text-xl font-bold " key={index}>
+                  Hello from the root layout!
+                </h1>
+              ))}
+            </div>
+            <div className="banner-group" aria-hidden="true">
+              {Array.from({ length: 10 }, (_, index) => (
+                <h1 className="m-0 text-xl font-bold " key={index}>
+                  Hello from the root layout!
+                </h1>
+              ))}
+            </div>
+          </div>
+        </div>
+        <NavBar />
         {children}
       </body>
     </html>
