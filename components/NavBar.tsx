@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {Button, buttonVariants} from "@/components/ui/button";
+import { ThemeToggle } from "./web/theme-toogle";
 
 const navLinks = [
   {name: "Home", href: "/" },
@@ -25,7 +26,11 @@ export function NavBar() {
           <ul className="nav-links flex flex-row justify-center p-0 gap-0  text-2xl">
             {navLinks.map((link) =>(
               <li key={link.name}>
-                <Link href={link.href} className={buttonVariants({variant:"ghost"})}>
+                <Link href={link.href} className={buttonVariants({
+                  variant:"ghost",
+                  className: ""
+                  
+                  })}>
                   {link.name}
                 </Link>
               </li>
@@ -34,18 +39,23 @@ export function NavBar() {
        
           <div className="flex gap-5 text-2xl p-1">
             <Button variant= {"destructive"} >DELETE</Button>
-            <Button variant={'default'}>Add</Button>
+            <Button 
+              variant={'default'} 
+              className="hover:bg-zinc-700"
+            >Add</Button>
+
+            <ThemeToggle></ThemeToggle>
 
             <Link href='/auth/sighnup' className={buttonVariants( {
               variant: "default",
-              className: "hover:bg-accent-foreground"
+              className: "hover:bg-zinc-700"
               } )}>
               Sign In
             </Link>
 
             <Link href='/auth/login' className={buttonVariants( {
               variant: "outline",
-              className: "text-black"
+              className: "text-foreground"
               
               } )}>
               Log In

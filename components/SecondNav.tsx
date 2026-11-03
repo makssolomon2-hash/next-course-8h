@@ -20,8 +20,8 @@ export function SecondNav()
                 <div >
                     <ul className="flex flex-row justify-end p-0 gap-0  text-2xl">
                         {Links.map((link) =>(
-                            <li>
-                                <Link href={link.href} className={buttonVariants({variant:"default"})} >{link.name}</Link>
+                            <li key={link.name}>
+                                <Link  href={link.href} className={buttonVariants({variant:"ghost"})} >{link.name}</Link>
                             </li>
                         ))}
                     </ul>
