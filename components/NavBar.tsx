@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {Button, buttonVariants} from "@/components/ui/button";
 
 const navLinks = [
   {name: "Home", href: "/" },
@@ -24,7 +25,7 @@ export function NavBar() {
           <ul className="nav-links flex flex-row justify-center p-0 gap-0  text-2xl">
             {navLinks.map((link) =>(
               <li key={link.name}>
-                <Link href={link.href} className="hover:bg-zinc-700 px-3 rounded-xl py-2">
+                <Link href={link.href} className={buttonVariants({variant:"ghost"})}>
                   {link.name}
                 </Link>
               </li>
@@ -32,16 +33,29 @@ export function NavBar() {
           </ul>
        
           <div className="flex gap-5 text-2xl p-1">
-            <Link href='/' className="hover:bg-zinc-700 px-3 py-2 rounded-xl">
+            <Button variant= {"destructive"} >DELETE</Button>
+            <Button variant={'default'}>Add</Button>
+
+            <Link href='/auth/sighnup' className={buttonVariants( {
+              variant: "default",
+              className: "hover:bg-accent-foreground"
+              } )}>
               Sign In
             </Link>
-            <Link href='/' className="bg-blue-700 text-white font-bold hover:bg-zinc-700 px-3 py-2 rounded-xl">
-              Login
+
+            <Link href='/auth/login' className={buttonVariants( {
+              variant: "outline",
+              className: "text-black"
+              
+              } )}>
+              Log In
             </Link>
+
           </div>
     </div>      
   </nav>
 
+    /*className="hover:bg-zinc-700 px-3 py-2 rounded-xl"*/
   
  )
 }

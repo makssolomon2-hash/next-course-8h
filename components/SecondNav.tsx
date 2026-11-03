@@ -1,17 +1,30 @@
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
+
+const Links = [
+  {name: "Products", href: "products/" },
+  {name: "Solution", href: "/solution" },
+  {name: "Resourses", href: "/resourses" },
+  {name: "Enterprice", href: "/enterprice" },
+  {name: "Docs", href: "/docs" },
+  {name: "Contact", href: "/about/contact" },
+  {name: "Pricing", href:"/pricing" },
+];
+
 
 export function SecondNav()
 {
     return(
-        <nav className="flex flex-row mx-auto justify-end mt-0 h-[40px]  text-5xl font-bold px-3 gap-3 bg-zinc-800 text-xl">
+        <nav >
                 {/* <p>about nav:</p> */}
-                <div className="about-links flex flex-row justify-center gap-4 p-1 text-zinc-200 ">
-                    <Link href="/products">Products</Link>
-                    <Link href="/solution">Solution</Link>
-                    <Link href="/resourses">Resourses</Link>
-                    <Link href="/enterprice">Enterprice</Link>
-                    <Link href="/docs">Docs</Link>
-                    <Link href="/pricing">Pricing</Link>
+                <div >
+                    <ul className="flex flex-row justify-end p-0 gap-0  text-2xl">
+                        {Links.map((link) =>(
+                            <li>
+                                <Link href={link.href} className={buttonVariants({variant:"default"})} >{link.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
                   
                 </div>
                 
