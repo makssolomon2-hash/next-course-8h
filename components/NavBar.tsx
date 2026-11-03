@@ -17,7 +17,7 @@ const navLinks = [
 export function NavBar() {
  return(
   <nav className="" >
-    <div className="nav-bar top-0 flex flex-row items-center w-full mt-0 h-[60px] py-50% mx-auto my-auto justify-between   text-[1px] font-medium text-white px-3 gap-3 bg-zinc-900">
+    <div className="nav-bar top-0 flex flex-row items-center w-full mt-0 h-[60px] py-50% mx-auto my-auto justify-between   text-[1px] font-medium text-foreground px-3 gap-3 bg-background">
       <Link href='/'>
             <p className="text-3xl">Next<span className="text-blue-700 font-extrabold text-3xl">PRO</span></p>
           </Link>
@@ -41,14 +41,14 @@ export function NavBar() {
             <Button variant= {"destructive"} >DELETE</Button>
             <Button 
               variant={'default'} 
-              className="hover:bg-zinc-700"
+              className=""
             >Add</Button>
 
             <ThemeToggle></ThemeToggle>
 
             <Link href='/auth/sighnup' className={buttonVariants( {
               variant: "default",
-              className: "hover:bg-zinc-700"
+              className: ""
               } )}>
               Sign In
             </Link>
