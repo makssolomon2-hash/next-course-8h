@@ -50,7 +50,7 @@ export function NavBar() {
               variant: "default",
               className: ""
               } )}>
-              Sign In
+              Sign Up
             </Link>
 
             <Link href='/auth/login' className={buttonVariants( {

@@ -79,7 +79,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-foreground text-foreground;
+    @apply bg-background text-foreground;
     font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
   }
 }
